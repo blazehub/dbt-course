@@ -1,0 +1,14 @@
+dbt_airbnb:
+  target: local
+  outputs:
+    common: &common
+      type: snowflake
+      account: "kyqtnif-kq37952"
+      user: "dbt"
+      role: "transform"
+      database: "AIRBNB"
+      warehouse: "COMPUTE_WH"
+      schema: "dev"
+    local:
+      <<: *common
+      password: 'dbtPassword123'
